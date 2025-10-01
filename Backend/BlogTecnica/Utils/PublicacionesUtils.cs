@@ -17,7 +17,9 @@ namespace BlogTecnicaAPI.Utils
                     FechaCreacion = p.FechaCreacion,
                     FechaModificacion = p.FechaModificacion,
                     AutorUsername = p.IdAutorNavigation.Username,
-                    Imagen = p.IdImagenPublicacionNavigation.Imagen != null ? Convert.ToBase64String(p.IdImagenPublicacionNavigation.Imagen) : null
+                    AutorId = p.IdAutorNavigation.IdUsuario,
+                    IdCategoria = p.IdCategoria,
+                    imagenBase64 = p.IdImagenPublicacionNavigation.Imagen != null ? Convert.ToBase64String(p.IdImagenPublicacionNavigation.Imagen) : null
                 })
                 .ToList();
         }
@@ -34,7 +36,9 @@ namespace BlogTecnicaAPI.Utils
                     FechaCreacion = p.FechaCreacion,
                     FechaModificacion = p.FechaModificacion,
                     AutorUsername = p.IdAutorNavigation.Username,
-                    Imagen = p.IdImagenPublicacionNavigation.Imagen != null ? Convert.ToBase64String(p.IdImagenPublicacionNavigation.Imagen) : null
+                    AutorId = p.IdAutorNavigation.IdUsuario,
+                    IdCategoria = p.IdCategoria,
+                    imagenBase64 = p.IdImagenPublicacionNavigation.Imagen != null ? Convert.ToBase64String(p.IdImagenPublicacionNavigation.Imagen) : null
 
                 })
                 .FirstOrDefault();
@@ -51,7 +55,9 @@ namespace BlogTecnicaAPI.Utils
                     FechaCreacion = p.FechaCreacion,
                     FechaModificacion = p.FechaModificacion,
                     AutorUsername = p.IdAutorNavigation.Username,
-                    Imagen = p.IdImagenPublicacionNavigation.Imagen != null ? Convert.ToBase64String(p.IdImagenPublicacionNavigation.Imagen) : null
+                    AutorId = p.IdAutorNavigation.IdUsuario,
+                    IdCategoria = p.IdCategoria,
+                    imagenBase64 = p.IdImagenPublicacionNavigation.Imagen != null ? Convert.ToBase64String(p.IdImagenPublicacionNavigation.Imagen) : null
 
                 })
                 .ToList();

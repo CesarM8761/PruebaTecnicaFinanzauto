@@ -4,15 +4,18 @@ import { API_BASE_URL } from "../config";
 import "../Styles/Header.css";
 import logo from "../images/logo.png";
 
-export default function Header({ isLoggedIn, onLogout }) {
+export default function Header({ isLoggedIn, onLogout })
+{
     const [username, setUsername] = useState("");
     const [showCategorias, setShowCategorias] = useState(false);
     const [categorias, setCategorias] = useState([]);
     const idUsuarioLogeado = localStorage.getItem("idUsuarioLogeado");
     const navigate = useNavigate();
 
-    useEffect(() => {
-        if (idUsuarioLogeado) {
+    useEffect(() =>
+    {
+        if (idUsuarioLogeado)
+        {
             fetch(`${API_BASE_URL}/Usuarios/${idUsuarioLogeado}`)
                 .then((res) => res.json())
                 .then((data) => setUsername(data.username))
@@ -20,40 +23,42 @@ export default function Header({ isLoggedIn, onLogout }) {
         }
     }, [idUsuarioLogeado]);
 
-    useEffect(() => {
+    useEffect(() =>
+    {
         fetch(`${API_BASE_URL}/Categorias`)
             .then((res) => res.json())
             .then((data) => setCategorias(data))
             .catch((err) => console.error("Error fetching categories:", err));
     }, []);
 
-    const handleLogoutClick = () => {
+    const handleLogoutClick = () =>
+    {
         onLogout();
         navigate("/");
     };
 
     return (
-        <header className="header">
-            <div className="header-left">
+        <header className="encabezado">
+            <div className="encabezado-izquierda">
                 <Link to="/">
-                    <img src={logo} alt="Logo" className="logo" />
+                    <img src={logo} alt="Logo" className="logo-header" />
                 </Link>
-                <nav className="nav">
-                    <Link to="/" className="nav-link">Inicio</Link>
-                    <div className="dropdown">
+                <nav className="navegacion-header">
+                    <Link to="/" className="enlace-navegacion">Inicio</Link>
+                    <div className="menu-desplegable">
                         <button
-                            className="dropdown-button"
+                            className="boton-desplegable"
                             onClick={() => setShowCategorias(!showCategorias)}
                         >
                             Categorías
                         </button>
                         {showCategorias && (
-                            <div className="dropdown-menu">
+                            <div className="menu-items-desplegable">
                                 {categorias.map((cat) => (
                                     <Link
                                         key={cat.idCategoria}
                                         to={`/categorias/${cat.idCategoria}`}
-                                        className="dropdown-item"
+                                        className="item-menu-desplegable"
                                     >
                                         {cat.nombreCategoria}
                                     </Link>
@@ -63,23 +68,24 @@ export default function Header({ isLoggedIn, onLogout }) {
                     </div>
                 </nav>
             </div>
-            <div className="header-right">
+            <div className="encabezado-derecha">
                 {!isLoggedIn ? (
                     <>
-                        <Link to="/login" className="button-login">Iniciar sesión</Link>
-                        <Link to="/registro" className="button-register">Registrarse</Link>
+                        <Link to="/login" className="boton-iniciar-sesion">Iniciar sesión</Link>
+                        <Link to="/registro" className="boton-registrarse">Registrarse</Link>
                     </>
                 ) : (
-                    <div className="user-actions">
-                        <Link to={`/usuario/${idUsuarioLogeado}`} className="button-register">
+                    <div className="acciones-usuario">
+                        <Link to={`/usuario/${idUsuarioLogeado}`} className="boton-registrarse">
                             {username}
                         </Link>
-                        <button className="button-logout" onClick={handleLogoutClick}>
+                        <button className="boton-cerrar-sesion" onClick={handleLogoutClick}>
                             Cerrar sesión
                         </button>
                     </div>
                 )}
             </div>
         </header>
+
     );
 }

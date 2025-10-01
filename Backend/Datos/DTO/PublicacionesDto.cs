@@ -13,7 +13,11 @@ namespace Datos.DTO
         public int IdCategoria { get; set; }
         public int IdImagenPublicacion { get; set; }
     }
-
+    public class ImagenDTO
+    {
+        public int IdImagen { get; set; }
+        public string Base64 { get; set; } = string.Empty;
+    }
     public class PublicacionDto
     {
         public int IdPublicacion { get; set; }
@@ -22,8 +26,9 @@ namespace Datos.DTO
         public DateTime FechaCreacion { get; set; }
         public DateTime? FechaModificacion { get; set; }
         public string AutorUsername { get; set; }
+        public int AutorId { get; set; }
         public int IdCategoria { get; set; }
-        public string Imagen { get; set; }
+        public string imagenBase64 { get; set; }
 
 
     }

@@ -1,4 +1,6 @@
-.header {
+/* HeaderPagina.css - estilos para el header */
+
+.encabezado {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,24 +10,24 @@
   font-family: Arial, sans-serif;
 }
 
-.header-left {
+.encabezado-izquierda {
   display: flex;
   align-items: center;
   gap: 24px;
 }
 
-.logo {
+.logo-header {
   height: 40px;
   width: 40px;
 }
 
-.nav {
+.navegacion-header {
   display: flex;
   align-items: center;
   gap: 24px;
 }
 
-.nav-link {
+.enlace-navegacion {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
@@ -33,15 +35,15 @@
   transition: color 0.2s;
 }
 
-.nav-link:hover {
+.enlace-navegacion:hover {
   color: #4ade80;
 }
 
-.dropdown {
+.menu-desplegable {
   position: relative;
 }
 
-.dropdown-button {
+.boton-desplegable {
   color: #fff;
   background: none;
   border: none;
@@ -51,11 +53,11 @@
   transition: color 0.2s;
 }
 
-.dropdown-button:hover {
+.boton-desplegable:hover {
   color: #4ade80;
 }
 
-.dropdown-menu {
+.menu-items-desplegable {
   position: absolute;
   top: 100%;
   left: 0;
@@ -68,7 +70,7 @@
   z-index: 10;
 }
 
-.dropdown-item {
+.item-menu-desplegable {
   display: block;
   padding: 10px 16px;
   color: #fff;
@@ -76,18 +78,19 @@
   transition: background 0.2s;
 }
 
-.dropdown-item:hover {
+.item-menu-desplegable:hover {
   background-color: #1f2937;
 }
 
-.header-right {
+.encabezado-derecha {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.button-login,
-.button-register, .button-logout {
+.boton-iniciar-sesion,
+.boton-registrarse,
+.boton-cerrar-sesion {
   padding: 6px 16px;
   border-radius: 6px;
   border: none;
@@ -97,37 +100,35 @@
   transition: background 0.2s;
 }
 
-.button-login {
+.boton-iniciar-sesion {
   background-color: #a7f3d0;
   color: #000;
 }
 
-.button-register {
+.boton-registrarse {
   background-color: #22c55e;
   color: #fff;
 }
 
-.button-login:hover {
+.boton-iniciar-sesion:hover {
   background-color: #81e6d9;
 }
 
-.button-register:hover {
+.boton-registrarse:hover {
   background-color: #16a34a;
 }
 
-.user-actions {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.acciones-usuario {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.button-logout {
-    background-color: #e74c3c;
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 500;
-
+.boton-cerrar-sesion {
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
 }
-
