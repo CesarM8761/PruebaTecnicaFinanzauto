@@ -89,7 +89,7 @@ docker-compose down
 
 ### Error al levantar Docker
 - Asegurar que los puertos 3000, 5000 y 1433 no estén en uso
-- Verificar que Docker y Docker-compose estén instalados
+- Verificar que Docker y Docker-compose estén instalados y corriendo.
 
 
 ### 💻 Opción 2: Visualizar Servicios montados en nube

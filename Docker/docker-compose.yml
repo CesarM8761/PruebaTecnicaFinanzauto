@@ -35,9 +35,6 @@ services:
     working_dir: /app
     volumes:
       - ./Backend:/app
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=PruebaTecnica;User Id=sa;Password=Password!12345;TrustServerCertificate=True;
     ports:
       - "5000:8080"
       - "5001:5001"
