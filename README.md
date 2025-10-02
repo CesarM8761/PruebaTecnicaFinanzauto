@@ -92,7 +92,7 @@ En caso de que por algún motivo no funcione el docker-compose, monté los servi
 API: http://www.pruebatecnicafz.somee.com/api/Publicaciones
 API Documentación:  http://www.pruebatecnicafz.somee.com/swagger/index.html
 
-Frontend: 
+Frontend: https://cesarm8761.github.io/PruebaTecnicaFront/#/
 
 ## Usuarios de Prueba
 
