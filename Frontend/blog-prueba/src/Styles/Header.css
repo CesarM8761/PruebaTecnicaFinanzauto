@@ -51,6 +51,7 @@
   cursor: pointer;
   padding: 4px 8px;
   transition: color 0.2s;
+  min-height: 100%;
 }
 
 .boton-desplegable:hover {

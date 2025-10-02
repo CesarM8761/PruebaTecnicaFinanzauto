@@ -43,7 +43,7 @@ namespace BlogTecnicaAPI.Controllers
             var idAutor = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
             var result = PublicacionesUtils.CrearPublicacion(dbContext, dto, idAutor);
             if (!result.success) return BadRequest(result.message);
-            return Ok(new { result.message, result.id });
+            return Ok(new { result.message, idPublicacion = result.id });
         }
 
         [HttpPut("{id}")]

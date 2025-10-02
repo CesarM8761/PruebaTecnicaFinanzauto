@@ -81,7 +81,7 @@ export default function User()
                         <img
                             src={pub.imagenBase64 ? `data:image/png;base64,${pub.imagenBase64}` : "/placeholder-user.png"}
                             alt="Publicación"
-                            className="imagen-publicacion"
+                            className="imagen-publicacion-lista"
                         />
                         <div className="contenido-publicacion">
                             <div className="titulo-publicacion">{pub.titulo || "Sin título"}</div>

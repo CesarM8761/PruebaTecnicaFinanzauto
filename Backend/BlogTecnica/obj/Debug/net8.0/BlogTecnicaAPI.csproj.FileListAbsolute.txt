@@ -164,7 +164,6 @@ E:\PROGRAMACION\Github\PruebaTecnicaFinanzauto\Backend\BlogTecnica\obj\Debug\net
 E:\PROGRAMACION\Github\PruebaTecnicaFinanzauto\Backend\BlogTecnica\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.BlogTecnicaAPI.props
 E:\PROGRAMACION\Github\PruebaTecnicaFinanzauto\Backend\BlogTecnica\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BlogTecnicaAPI.props
 E:\PROGRAMACION\Github\PruebaTecnicaFinanzauto\Backend\BlogTecnica\obj\Debug\net8.0\staticwebassets.pack.json
-E:\PROGRAMACION\Github\PruebaTecnicaFinanzauto\Backend\BlogTecnica\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 E:\PROGRAMACION\Github\PruebaTecnicaFinanzauto\Backend\BlogTecnica\obj\Debug\net8.0\BlogTecn.D66251FC.Up2Date
 E:\PROGRAMACION\Github\PruebaTecnicaFinanzauto\Backend\BlogTecnica\obj\Debug\net8.0\BlogTecnicaAPI.dll
 E:\PROGRAMACION\Github\PruebaTecnicaFinanzauto\Backend\BlogTecnica\obj\Debug\net8.0\refint\BlogTecnicaAPI.dll

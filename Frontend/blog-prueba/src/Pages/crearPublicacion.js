@@ -3,7 +3,8 @@ import { useNavigate, useParams, useLocation } from "react-router-dom"
 import { API_BASE_URL } from "../config"
 import "../Styles/CrearPublicacion.css"
 
-export default function PublicacionForm() {
+export default function PublicacionForm()
+{
     const navigate = useNavigate()
     const { id } = useParams()
     const location = useLocation()
@@ -17,18 +18,22 @@ export default function PublicacionForm() {
     const [imagenBase64, setImagenBase64] = useState(null)
     const [loading, setLoading] = useState(false)
 
-    useEffect(() => {
+    useEffect(() =>
+    {
         fetch(`${API_BASE_URL}/Categorias`)
             .then(res => res.json())
             .then(data => setCategorias(data))
             .catch(err => console.error("Error cargando categorías:", err))
     }, [])
 
-    useEffect(() => {
-        if (!isCrear && id) {
+    useEffect(() =>
+    {
+        if (!isCrear && id)
+        {
             fetch(`${API_BASE_URL}/Publicaciones/${id}`)
                 .then(res => res.json())
-                .then(data => {
+                .then(data =>
+                {
                     setTitulo(data.titulo)
                     setContenido(data.contenido)
                     setCategoriaSeleccionada(data.idCategoria.toString())
@@ -38,7 +43,8 @@ export default function PublicacionForm() {
         }
     }, [isCrear, id])
 
-    const handleFileChange = (e) => {
+    const handleFileChange = (e) =>
+    {
         const file = e.target.files[0]
         if (!file) return
         const reader = new FileReader()
@@ -46,16 +52,20 @@ export default function PublicacionForm() {
         reader.readAsDataURL(file)
     }
 
-    const handleSubmit = async () => {
-        if (!titulo || !contenido || !categoriaSeleccionada || !imagenBase64) {
+    const handleSubmit = async () =>
+    {
+        if (!titulo || !contenido || !categoriaSeleccionada || !imagenBase64)
+        {
             alert("Todos los campos son obligatorios")
             return
         }
 
         setLoading(true)
-        try {
+        try
+        {
             let idImagen = 0
-            if (imagenBase64) {
+            if (imagenBase64)
+            {
                 const imgRes = await fetch(`${API_BASE_URL}/Imagenes`, {
                     method: "POST",
                     headers: {
@@ -68,7 +78,8 @@ export default function PublicacionForm() {
                 idImagen = imgData.idImagen
             }
 
-            if (isCrear) {
+            if (isCrear)
+            {
                 const pubRes = await fetch(`${API_BASE_URL}/Publicaciones`, {
                     method: "POST",
                     headers: {
@@ -85,7 +96,8 @@ export default function PublicacionForm() {
                 const pubData = await pubRes.json()
                 if (!pubRes.ok) throw new Error("Error creando publicación")
                 navigate(`/publicacion/${pubData.idPublicacion}`)
-            } else {
+            } else
+            {
                 const pubRes = await fetch(`${API_BASE_URL}/Publicaciones/${id}`, {
                     method: "PUT",
                     headers: {
@@ -100,12 +112,15 @@ export default function PublicacionForm() {
                     })
                 })
                 if (!pubRes.ok) throw new Error("Error editando publicación")
-                alert("Publicación actualizada correctamente")
+                const updatedData = await pubRes.json()
+                navigate(`/publicacion/${updatedData.idPublicacion || id}`)
             }
-        } catch (err) {
+        } catch (err)
+        {
             console.error(err)
             alert("Ocurrió un error al procesar la publicación")
-        } finally {
+        } finally
+        {
             setLoading(false)
         }
     }
