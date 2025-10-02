@@ -1,197 +1,70 @@
-# Blog Finanzauto - Prueba Técnica Full-Stack
+# Getting Started with Create React App
 
-## Descripción
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Aplicación web tipo Blog desarrollada como prueba técnica, que permite a los usuarios registrarse, autenticarse y gestionar publicaciones (crear, listar, editar y eliminar). Cada publicación incluye título, contenido, fecha de creación y autor.
+## Available Scripts
 
-## Arquitectura del Proyecto
+In the project directory, you can run:
 
-```
-PruebaTecnicaFinanzauto/
-├── Backend/
-│   ├── BlogTecnica/          # API REST en .NET
-│   └── Datos/                # Capa de acceso a datos también en .Net
-├── Frontend/
-│   └── blog-prueba/          # Aplicación web React
-├── Docker/
-│   ├── Backend/              # API compilada para correr en docker
-│   ├── Frontend/             # Dockerfile para React y carpeta Build generada con npm, monta el servicio con Nginx
-│   ├── db-init/              # Scripts de inicialización de BD
-│   └── docker-compose.yml    # Docker compose
-└── Data/                     # Script de la base de datos exportado desde sql server
-```
+### `npm start`
 
-## Tecnologías Utilizadas
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Backend
-- **.NET Core** (C# con ASP.NET)
-- **Entity Framework** 
-- **SQL Server** como base de datos
-- **JWT** para autenticación
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
+### `npm test`
 
-### Frontend
-- **React** 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Endpoints del API
+### `npm run build`
 
-### Usuarios
-- `GET /api/Usuarios` - Listar todos los usuarios
-- `POST /api/Usuarios` - Crear nuevo usuario (registro)
-- `GET /api/Usuarios/{id}` - Obtener un usuario específico
-- `PUT /api/Usuarios/{id}` - Actualizar datos de usuario
-- `DELETE /api/Usuarios/{id}` - Eliminar usuario
-- `POST /api/Usuarios/auth` - Autenticar usuario (login)
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Publicaciones
-- `GET /api/Publicaciones` - Listar todas las publicaciones
-- `POST /api/Publicaciones` - Crear nueva publicación
-- `GET /api/Publicaciones/{id}` - Obtener una publicación específica
-- `PUT /api/Publicaciones/{id}` - Actualizar publicación existente
-- `DELETE /api/Publicaciones/{id}` - Eliminar publicación
-- `GET /api/Publicaciones/Usuario/{idUsuario}` - Listar publicaciones de un usuario específico
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### Categorías
-- `GET /api/Categorias` - Listar todas las categorías disponibles
-- `GET /api/Categorias/{id}` - Obtener una categoría específica
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Imágenes
-- `GET /api/Imagenes` - Listar todas las imágenes
-- `POST /api/Imagenes` - Subir nueva imagen
-- `GET /api/Imagenes/{id}` - Obtener una imagen específica
+### `npm run eject`
 
-## Cómo ejecutar
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-1. **Clonar el repositorio**
-```bash
-git clone https://github.com/tu-usuario/PruebaTecnicaFinanzauto.git
-cd PruebaTecnicaFinanzauto
-```
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### Opción 1: Ejecución con Docker 
-1. Ir a la carpeta PruebaTecnicaFinanzauto/Docker
-2. **Levantar los servicios con Docker Compose**
-```bash
-cd Docker
-docker-compose up --build
-```
-3. **Acceder a la aplicación**
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:5000
-- SQL Server: localhost:1433
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-4. **Detener los servicios**
-```bash
-docker-compose down
-```
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-### 💻 Opción 2: Visualizar Servicios montados en nube
+## Learn More
 
-En caso de que por algún motivo no funcione el docker-compose, monté los servicios en la nube para una correcta visualización.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-API: http://www.pruebatecnicafz.somee.com/api/Publicaciones
-API Documentación:  http://www.pruebatecnicafz.somee.com/swagger/index.html
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-Frontend: 
+### Code Splitting
 
-## Usuarios de Prueba
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-Generé 2 usuarios de prueba, uno con el que se realizaron las publicaciones y otro solamente de visualización, sin embargo se pueden crear usuarios nuevos desde la pagina de registro
+### Analyzing the Bundle Size
 
-| Usuario | Contraseña | 
-|---------|------------|
-| prueba@gmail.com | prueba | 
-| publicador@gmail.com | publicador | 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
+### Making a Progressive Web App
 
-## Funcionalidades Implementadas
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Autenticación y Autorización
-- Registro de usuarios con validación
-- Login con JWT
-- Protección de rutas privadas
+### Advanced Configuration
 
-### Gestión de Publicaciones
-- Crear publicaciones (usuarios autenticados)
-- Listar todas las publicaciones
-- Ver detalle de publicación
-- Editar publicaciones propias
-- Eliminar publicaciones propias
-- Fecha de creación automática
-- Asociación autor-publicación
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Interfaz de Usuario
-- Diseño responsive
-- Página de inicio (Landing)
-- Formularios de registro e inicio de sesión
-- Lista de publicaciones
-- Formulario de creación/edición
-- Panel de usuario
-- Página 404 
+### Deployment
 
-### Docker
--  Docker Compose para orquestación
--  Scripts de inicialización de BD
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-## Estructura de la Base de Datos
+### `npm run build` fails to minify
 
-### Tabla: dbo.Usuarios
-| Campo | Tipo | Restricción | Descripción |
-|-------|------|-------------|-------------|
-| idUsuario | int | PK, Not Null | Identificador único del usuario |
-| Nombre | nvarchar(100) | Not Null | Nombre completo del usuario |
-| Username | nvarchar(50) | Not Null | Nombre de usuario para login |
-| email | nvarchar(150) | Not Null | Correo electrónico |
-| password | nvarchar(200) | Not Null | Contraseña hasheada |
-
-### Tabla: dbo.Categorias
-| Campo | Tipo | Restricción | Descripción |
-|-------|------|-------------|-------------|
-| idCategoria | int | PK, Not Null | Identificador único de categoría |
-| nombreCategoria | nvarchar(100) | Not Null | Nombre de la categoría |
-
-### Tabla: dbo.Imagenes
-| Campo | Tipo | Restricción | Descripción |
-|-------|------|-------------|-------------|
-| idImagen | int | PK, FK, Not Null | Identificador único de imagen |
-| Imagen | varbinary(max) | Null | Datos binarios de la imagen |
-
-### Tabla: dbo.Publicaciones
-| Campo | Tipo | Restricción | Descripción |
-|-------|------|-------------|-------------|
-| idPublicacion | int | PK, Not Null | Identificador único de publicación |
-| Titulo | nvarchar(200) | Not Null | Título de la publicación |
-| Contenido | nvarchar(max) | Not Null | Contenido completo de la publicación |
-| FechaCreacion | datetime | Not Null | Fecha de creación automática |
-| FechaModificacion | datetime | Null | Fecha de última modificación |
-| idAutor | int | FK, Not Null | Referencia al usuario autor |
-| idImagenPublicacion | int | FK, Null | Referencia a imagen asociada |
-| idCategoria | int | FK, Not Null | Referencia a la categoría |
-
-### Tabla: dbo.PubliImagen
-| Campo | Tipo | Restricción | Descripción |
-|-------|------|-------------|-------------|
-| idImagen | int | PK, FK, Not Null | Referencia a la imagen |
-| idPublicacion | int | PK, FK, Not Null | Referencia a la publicación |
-| Posicion | int | Not Null | Orden de la imagen en la publicación |
-
-### Relaciones
-- **Publicaciones → Usuarios**: `idAutor` referencia a `idUsuario`
-- **Publicaciones → Categorias**: `idCategoria` referencia a `idCategoria`
-- **Publicaciones → Imagenes**: `idImagenPublicacion` referencia a `idImagen`
-- **PubliImagen → Imagenes**: `idImagen` referencia a `idImagen`
-- **PubliImagen → Publicaciones**: `idPublicacion` referencia a `idPublicacion`
-
-## Solución de Problemas
-
-### Error al levantar Docker
-- Asegurar que los puertos 3000, 5000 y 1433 no estén en uso
-- Verificar que Docker Desktop esté ejecutándose
-
-## 👨‍💻 Autor
-
-Desarrollado por Cesar Mauricio Martinez Navarro como prueba técnica para Finanzauto.
-
----
-
-**Fecha de entrega:** 2 de Octubre de 2025  
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
