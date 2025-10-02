@@ -64,7 +64,7 @@ PruebaTecnicaFinanzauto/
 
 1. **Clonar el repositorio**
 ```bash
-git clone https://github.com/tu-usuario/PruebaTecnicaFinanzauto.git
+git clone https://github.com/CesarM8761/PruebaTecnicaFinanzauto.git
 cd PruebaTecnicaFinanzauto
 ```
 
@@ -84,6 +84,13 @@ docker-compose up --build
 ```bash
 docker-compose down
 ```
+
+## Solución de Problemas
+
+### Error al levantar Docker
+- Asegurar que los puertos 3000, 5000 y 1433 no estén en uso
+- Verificar que Docker y Docker-compose estén instalados
+
 
 ### 💻 Opción 2: Visualizar Servicios montados en nube
 
@@ -181,12 +188,6 @@ Generé 2 usuarios de prueba, uno con el que se realizaron las publicaciones y o
 - **Publicaciones → Imagenes**: `idImagenPublicacion` referencia a `idImagen`
 - **PubliImagen → Imagenes**: `idImagen` referencia a `idImagen`
 - **PubliImagen → Publicaciones**: `idPublicacion` referencia a `idPublicacion`
-
-## Solución de Problemas
-
-### Error al levantar Docker
-- Asegurar que los puertos 3000, 5000 y 1433 no estén en uso
-- Verificar que Docker Desktop esté ejecutándose
 
 ## 👨‍💻 Autor
 
